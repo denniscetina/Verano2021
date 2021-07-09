@@ -1,0 +1,42 @@
+<html>
+<header>
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js">
+
+	AFRAME.registerComponent('markerhandler', {
+init: function () {
+this.el.sceneEl.addEventListener('markerFound', () => {
+// redirect to custom URL
+//window.location = 'https://github.com/AR-js-org/AR.js';
+console.log('Marcador Encontrado');
+});
+}
+});
+</script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js">
+
+
+</script>
+
+ 
+
+
+</header>
+<body>
+
+<a-scene arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
+<a-assets>
+
+<a-asset-item id="Con_obj" src="Modelos/Campfire.obj"></a-asset-item>
+<a-asset-item id="Con_mtl" src="Modelos/Campfire.mtl"></a-asset-item>
+</a-assets>|
+<a-marker type='pattern' preset="hiro" markerhandler>
+<a-entity position="0 0 0" scale="0.01 0.01 0.01" rotation="0 180 0">
+<!--a-dodecahedron color="#FF926B" radius="1"></a-dodecahedron-->
+<!--a-obj-model src="#PS5_obj" mtl="#PS5_mtl"></a-obj-model-->
+<a-obj-model src="#Con_obj" mtl="#Con_mtl"></a-obj-model>
+</a-entity>
+</a-marker>
+<a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>

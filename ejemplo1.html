@@ -1,0 +1,18 @@
+<html>
+    <header>
+        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js">
+        </script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js">
+        </script>
+    </header>
+    <body>
+        <a-scene arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+            <a-marker preset="kanji" type="pattern">
+                <a-entity position="0 0 0">
+                    <a-dodecahedron color="#FF926B" radius="0.5">
+                    </a-dodecahedron>
+                </a-entity>
+            </a-marker>
+        </a-scene>
+    </body>
+</html>
